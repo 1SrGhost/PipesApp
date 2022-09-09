@@ -1,0 +1,66 @@
+<div class="text-layout">
+    <h1>Pipes No Comunes</h1>
+    <p>
+        Pipes incluidos en Angular - Usualmente en el Common Module.
+    </p>
+</div>
+
+<div class="p-grid">
+
+    <div class="p-col p-md-6">
+        <p-fieldset legend="I18nSelect Pipe" [toggleable]="true">
+            <p>Saludos {{nombre}} deseo {{ genero | i18nSelect:invitacionMap}} a revisar la magia</p>
+            <button pButton
+                    label="Cambiar Persona"
+                    class="p-button-help" 
+                    (click)="cambiarCliente()">
+            </button>
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset 
+            legend="I18nPlural Pipe" 
+            [toggleable]="true">
+            <p> Actualmente {{ clientes.length | i18nPlural:clientesMap}}</p>
+         
+           <button pButton 
+                   label="Borrar Cliente" 
+                   class="p-button-help" 
+                   (click)="borrarCliente()">              
+           </button>
+           <button pButton 
+                   label="Restablecer" 
+                   class="p-button-help" 
+                   (click)="retablecer()">           
+           </button>
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset 
+            legend="Slice Pipe" 
+            [toggleable]="true">
+            <b>Original</b>
+            <pre>{{clientes}}</pre>
+            <br>
+            <b>slice</b>
+            <pre>{{clientes | slice:0}}</pre>
+        </p-fieldset>
+    </div>
+
+    <div class="p-col p-md-6">
+        <p-fieldset 
+            legend="Key Value Pipe" 
+            [toggleable]="true">
+
+            <ul>
+                <li *ngFor="let item of persona | keyvalue">
+                  <b> {{ item.key }}:</b>  {{item.value}}
+                </li>
+                
+            </ul>
+
+        </p-fieldset>
+
+           
+    </div>
+</div>
