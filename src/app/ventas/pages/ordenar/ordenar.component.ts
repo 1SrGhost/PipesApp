@@ -6,11 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class OrdenarComponent implements OnInit {
+export class OrdenarComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  variable: boolean = true;
+  cambiar() {
+    console.log("funcionando");
+    if (this.variable){
+      this.variable = false;
+      console.log(this.variable);
+    }
+    else {
+      this.variable = true;
+      console.log(this.variable);
+    }
   }
 
 }
+
