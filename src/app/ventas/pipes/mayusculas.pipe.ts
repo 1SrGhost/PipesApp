@@ -1,7 +1,9 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-    name: 'mayusculas'})
+    name: 'mayusculas'
+    })
+    
 export class MayusculasPipe implements PipeTransform {
 
     transform(variable: string, enMayusculas:boolean): string {  
